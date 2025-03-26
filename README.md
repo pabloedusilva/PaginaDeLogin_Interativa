@@ -34,7 +34,7 @@ Este é um projeto de página de login e cadastro responsivo, desenvolvido com H
 ```bash
 /
 # Clone este repositório
-$ git clone https://github.com/seu-usuario/nome-do-repositorio.git
+$ git clone https://github.com/pabloedusilva/PaginaDeLogin_Interativa.git
 
 # Acesse a pasta do projeto
 $ cd nome-do-repositorio
