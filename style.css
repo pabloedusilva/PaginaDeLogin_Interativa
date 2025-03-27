@@ -1,27 +1,22 @@
 :root {
-    /* Define as variáveis de cores e estilos para uso em todo o CSS */
+    /* Cores e variáveis para o tema */
     --background-dark: rgba(0, 0, 0, 0.795);
-    /* Cor de fundo escura com opacidade */
     --background-light: #fff;
-    /* Cor de fundo clara (branca) */
     --background-body-light: #f5f5f5;
-    /* Cor de fundo do corpo em modo claro */
     --background-body-dark: #2c2c2c;
-    /* Cor de fundo do corpo em modo escuro */
     --box-shadow: rgba(138, 138, 138, 0.35);
-    /* Cor da sombra dos elementos */
-    --button-bg: rgb(0, 68, 255);
-    /* Cor de fundo do botão */
+    --button-bg: rgb(51, 51, 51);
+    --button-bg-active: rgb(51, 51, 51);
     --button-border: transparent;
-    /* Cor da borda do botão */
     --button-text: #fff;
-    /* Cor do texto no botão */
     --input-bg: #eee;
-    /* Cor de fundo dos campos de entrada */
     --text-color: #333;
-    /* Cor do texto padrão */
-    --toggle-bg: rgba(0, 68, 255);
-    /* Cor de fundo do toggle */
+    --toggle-bg: transparent;
+    /* Mudado para transparente */
+    --toggle-bg-active: transparent;
+    /* Mudado para transparente */
+    --overlay-color: rgba(0, 0, 0, 0.75);
+    /* Overlay mais escuro */
 }
 
 * {
@@ -396,35 +391,58 @@ input.error {
 
 .password-field {
     position: relative;
+    /* Posição relativa para o campo de senha */
     width: 100%;
+    /* Largura total */
     margin: 8px 0;
+    /* Margem vertical */
 }
 
 .password-field input {
+    /* Estilos para o campo de entrada de senha */
     width: 100%;
+    /* Largura total */
     padding-right: 40px;
+    /* Preenchimento à direita para o ícone */
     background-color: var(--input-bg);
+    /* Cor de fundo */
     border: none;
+    /* Sem borda */
     margin: 0;
+    /* Sem margem */
     padding: 10px 40px 10px 15px;
+    /* Preenchimento interno */
     font-size: 13px;
+    /* Tamanho da fonte */
     border-radius: 8px;
+    /* Cantos arredondados */
     outline: none;
+    /* Remove a borda de foco padrão */
 }
 
 .eye-icon {
+    /* Estilos para o ícone de olho */
     position: absolute;
+    /* Posição absoluta dentro do campo de senha */
     right: 10px;
+    /* Alinha à direita */
     top: 50%;
+    /* Alinha verticalmente ao centro */
     transform: translateY(-50%);
+    /* Centraliza verticalmente */
     cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
     color: #666;
+    /* Cor do ícone */
     font-size: 20px;
+    /* Tamanho do ícone */
     transition: color 0.3s ease;
+    /* Transição suave para mudanças de cor */
 }
 
 .eye-icon:hover {
     color: var(--button-bg);
+    /* Muda a cor ao passar o mouse */
 }
 
 
@@ -436,54 +454,71 @@ input.error {
 @media (max-width: 768px) {
     .container {
         min-height: 400px;
+        /* Altura mínima reduzida para dispositivos menores */
         width: 90%;
+        /* Largura ajustada para 90% */
     }
     .form-container {
         width: 100%;
+        /* Largura total para o contêiner do formulário */
         left: 0;
+        /* Alinha à esquerda */
     }
-    .sign-in {
-        width: 100%;
-    }
+    .sign-in,
     .sign-up {
         width: 100%;
+        /* Largura total para ambas as seções */
     }
     .toggle-container {
         display: none;
+        /* Esconde o contêiner de toggle em telas menores */
     }
     .container button {
         padding: 8px 25px;
+        /* Ajuste de preenchimento para botões */
     }
     .container form {
         padding: 0 20px;
+        /* Ajuste de preenchimento para o formulário */
     }
     .container h1 {
         font-size: 20px;
+        /* Tamanho do título ajustado */
     }
     .social-icons a {
         width: 30px;
+        /* Largura reduzida para ícones sociais */
         height: 30px;
+        /* Altura reduzida para ícones sociais */
     }
 }
 
 @media (max-width: 480px) {
     .container {
         min-height: 350px;
+        /* Altura mínima reduzida ainda mais */
         width: 95%;
+        /* Largura ajustada para 95% */
     }
     .container input {
         padding: 8px 10px;
+        /* Preenchimento reduzido para campos de entrada */
     }
     .container button {
         padding: 6px 20px;
+        /* Ajuste de preenchimento para botões */
         font-size: 11px;
+        /* Tamanho da fonte reduzido */
     }
     .social-icons {
         margin: 10px 0;
+        /* Margem vertical ajustada */
     }
     .container p {
         font-size: 12px;
+        /* Tamanho da fonte ajustado para parágrafos */
         margin: 10px 0;
+        /* Margem vertical ajustada */
     }
 }
 
@@ -493,78 +528,358 @@ input.error {
 @media (max-height: 600px) {
     .container {
         margin: 20px 0;
+        /* Margem vertical ajustada */
         min-height: 300px;
+        /* Altura mínima reduzida */
     }
 }
 
 .mobile-login,
 .mobile-signup {
     display: none;
+    /* Esconde seções de login e registro móveis */
 }
 
 @media (max-width: 768px) {
     .mobile-login,
     .mobile-signup {
         display: block;
+        /* Exibe seções móveis em telas menores */
     }
     .toggle-container {
         display: none;
+        /* Esconde o contêiner de toggle em telas menores */
     }
 }
 
 .checkbox-container {
     width: 100%;
+    /* Largura total para o contêiner de checkbox */
     margin: 10px 0;
+    /* Margem vertical */
 }
 
 .custom-checkbox {
     display: flex;
+    /* Exibe como flexível */
     align-items: center;
+    /* Alinha itens ao centro verticalmente */
     cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
     font-size: 13px;
+    /* Tamanho da fonte */
     color: var(--text-color);
+    /* Cor do texto */
     user-select: none;
+    /* Impede seleção de texto */
 }
 
 .custom-checkbox input {
     position: absolute;
+    /* Posição absoluta para esconder o checkbox padrão */
     opacity: 0;
+    /* Torna invisível */
     cursor: pointer;
+    /* Muda o cursor */
     height: 0;
+    /* Altura zero */
     width: 0;
+    /* Largura zero */
 }
 
 .checkmark {
     height: 18px;
+    /* Altura do checkbox customizado */
     width: 18px;
+    /* Largura do checkbox customizado */
     background-color: var(--input-bg);
+    /* Cor de fundo do checkbox */
     border-radius: 4px;
+    /* Cantos arredondados */
     margin-right: 8px;
+    /* Margem direita */
     display: flex;
+    /* Exibe como flexível */
     align-items: center;
+    /* Alinha itens ao centro verticalmente */
     justify-content: center;
+    /* Alinha itens ao centro horizontalmente */
     flex-shrink: 0;
+    /* Impede encolhimento */
 }
 
 .checkmark:after {
     content: '';
+    /* Adiciona conteúdo vazio para o ícone de verificação */
     position: absolute;
+    /* Posição absoluta */
     display: none;
+    /* Inicialmente escondido */
     width: 5px;
+    /* Largura do ícone de verificação */
     height: 10px;
+    /* Altura do ícone de verificação */
     border: solid var(--button-bg);
+    /* Cor do ícone de verificação */
     border-width: 0 2px 2px 0;
+    /* Estilo da borda */
     transform: rotate(45deg);
+    /* Rotaciona para formar um "check" */
 }
 
 .custom-checkbox input:checked~.checkmark {
     background-color: var(--input-bg);
+    /* Cor de fundo quando checked */
 }
 
 .custom-checkbox input:checked~.checkmark:after {
     display: block;
+    /* Exibe o ícone de verificação quando checked */
 }
 
 .checkbox-text {
     margin-left: 4px;
+    /* Margem esquerda para o texto do checkbox */
+}
+
+
+/* Atualização apenas da parte do toggle e imagens */
+
+.toggle {
+    position: relative;
+    /* Posição relativa */
+    height: 100%;
+    /* Altura total */
+    width: 200%;
+    /* Largura de 200% para permitir a transição */
+    transform: translateX(0);
+    /* Posição inicial */
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transição suave */
+    background: none;
+    /* Sem fundo */
+}
+
+.toggle-panel {
+    position: absolute;
+    /* Posição absoluta para sobreposição */
+    width: 50%;
+    /* Largura de 50% */
+    height: 100%;
+    /* Altura total */
+    display: flex;
+    /* Usa Flexbox para layout */
+    align-items: center;
+    /* Alinha itens ao centro verticalmente */
+    justify-content: center;
+    /* Alinha itens ao centro horizontalmente */
+    flex-direction: column;
+    /* Coloca itens em coluna */
+    padding: 0 30px;
+    /* Preenchimento horizontal */
+    text-align: center;
+    /* Centraliza o texto */
+    top: 0;
+    /* Alinha ao topo */
+    transform: translateX(0);
+    /* Posição inicial */
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease-in-out;
+    /* Transição suave */
+    background-position: center;
+    /* Centraliza a imagem de fundo */
+    background-size: cover;
+    /* Cobre toda a área */
+    overflow: hidden;
+    /* Esconde o conteúdo que transbordar */
+}
+
+
+/* Efeito de fade nas imagens */
+
+.toggle-panel::after {
+    content: '';
+    /* Adiciona conteúdo vazio para efeito de overlay */
+    position: absolute;
+    /* Posição absoluta */
+    top: 0;
+    /* Alinha ao topo */
+    left: 0;
+    /* Alinha à esquerda */
+    right: 0;
+    /* Alinha à direita */
+    bottom: 0;
+    /* Alinha ao fundo */
+    background-position: center;
+    /* Centraliza a imagem de fundo */
+    background-size: cover;
+    /* Cobre toda a área */
+    opacity: 0;
+    /* Inicialmente invisível */
+    transition: opacity 0.8s ease-in-out;
+    /* Transição suave */
+    z-index: -2;
+    /* Z-index para ficar atrás dos outros elementos */
+}
+
+
+/* Atualizações do toggle e painéis */
+
+.toggle-container {
+    transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+    /* Transição suave */
+}
+
+.toggle {
+    position: relative;
+    /* Posição relativa */
+    height: 100%;
+    /* Altura total */
+    width: 200%;
+    /* Largura de 200% para permitir a transição */
+    transform: translateX(0);
+    /* Posição inicial */
+    transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+    /* Transição suave */
+    background: none;
+    /* Sem fundo */
+    will-change: transform;
+    /* Otimização para animação */
+}
+
+.toggle-panel {
+    position: absolute;
+    /* Posição absoluta para sobreposição */
+    width: 50%;
+    /* Largura de 50% */
+    height: 100%;
+    /* Altura total */
+    display: flex;
+    /* Usa Flexbox para layout */
+    align-items: center;
+    /* Alinha itens ao centro verticalmente */
+    justify-content: center;
+    /* Alinha itens ao centro horizontalmente */
+    flex-direction: column;
+    /* Coloca itens em coluna */
+    padding: 0 30px;
+    /* Preenchimento horizontal */
+    text-align: center;
+    /* Centraliza o texto */
+    top: 0;
+    /* Alinha ao topo */
+    background-position: center;
+    /* Centraliza a imagem de fundo */
+    background-size: cover;
+    /* Cobre toda a área */
+    transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+    /* Transição suave */
+    will-change: transform, opacity;
+    /* Otimização para animação */
+}
+
+
+/* Imagens de fundo com melhor transição */
+
+.toggle-left {
+    transform: translateX(-200%);
+    /* Move para fora da tela à esquerda */
+    background-image: url('https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3539905:1722265296/GTqcdSwXUAAPB7Z.jpeg?f=16x9&$p$f=f1c0556');
+    /* Imagem de fundo */
+    background-size: cover;
+    /* Cobre toda a área */
+    background-position: center;
+    /* Centraliza a imagem de fundo */
+}
+
+.toggle-right {
+    right: 0;
+    /* Alinha à direita */
+    transform: translateX(0);
+    /* Posição inicial */
+    background-image: url('https://media.istockphoto.com/id/1209988354/pt/foto/young-man-skateboarding-in-los-angeles.jpg?s=612x612&w=0&k=20&c=CJdN7rFhY4ueYJgEtjFf9_P8GO0ZHq8k_egqDJOzMq4=');
+    /* Imagem de fundo */
+    background-size: cover;
+    /* Cobre toda a área */
+    background-position: center;
+    /* Centraliza a imagem de fundo */
+}
+
+
+/* Overlay com transição suave */
+
+.toggle-panel::before {
+    content: '';
+    /* Adiciona conteúdo vazio para efeito de overlay */
+    position: absolute;
+    /* Posição absoluta */
+    top: 0;
+    /* Alinha ao topo */
+    left: 0;
+    /* Alinha à esquerda */
+    right: 0;
+    /* Alinha à direita */
+    bottom: 0;
+    /* Alinha ao fundo */
+    background: var(--overlay-color);
+    /* Cor do overlay */
+    opacity: 0.75;
+    /* Opacidade do overlay */
+    transition: opacity 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+    /* Transição suave */
+    z-index: 1;
+    /* Z-index para ficar acima dos outros elementos */
+}
+
+
+/* Animações de conteúdo */
+
+.toggle-panel h1,
+.toggle-panel p,
+.toggle-panel button {
+    position: relative;
+    /* Posição relativa */
+    z-index: 2;
+    /* Z-index para ficar acima do overlay */
+    color: white;
+    /* Cor do texto */
+    transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.7, 0, 0.2, 1);
+    /* Transições suaves */
+}
+
+
+/* Estados ativos atualizados */
+
+.container.active .toggle-left {
+    transform: translateX(0);
+    /* Move para a posição original quando ativo */
+}
+
+.container.active .toggle-right {
+    transform: translateX(200%);
+    /* Move para fora da tela à direita quando ativo */
+}
+
+
+/* Efeitos de hover nos botões */
+
+.container button.hidden {
+    background-color: transparent;
+    /* Fundo transparente */
+    border: 2px solid white;
+    /* Borda branca */
+    color: white;
+    /* Cor do texto branca */
+    font-weight: bold;
+    /* Peso da fonte em negrito */
+    transition: all 0.4s cubic-bezier(0.7, 0, 0.2, 1);
+    /* Transição suave */
+    backdrop-filter: blur(3px);
+    /* Efeito de desfoque no fundo */
+}
+
+.container button.hidden:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fundo ligeiramente branco ao passar o mouse */
+    transform: scale(1.05);
+    /* Aumenta o tamanho ao passar o mouse */
 }
