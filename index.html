@@ -4,16 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--https://boxicons.com/ -->
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Página de Login</title>
 </head>
 
 <body>
-
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
@@ -27,11 +23,14 @@
                 <span>Registrar-se</span>
                 <input type="text" placeholder="Nome">
                 <input type="email" placeholder="E-mail">
-                <input type="password" placeholder="Senha">
+                <div class="password-field">
+                    <input type="password" placeholder="Senha" id="signupPassword">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
                 <button>Cadastre-se</button>
+                <a href="#" class="mobile-login">Já possui uma conta? Entrar</a>
             </form>
         </div>
-
 
         <div class="form-container sign-in">
             <form>
@@ -44,29 +43,31 @@
                 </div>
                 <span>Login</span>
                 <input type="email" placeholder="Email ou ID">
-                <input type="password" placeholder="Senha">
+                <div class="password-field">
+                    <input type="password" placeholder="Senha" id="signinPassword">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
                 <a href="#">Esqueceu a senha?</a>
                 <button>Entrar</button>
+                <a href="#" class="mobile-signup">Não tem uma conta? Cadastre-se</a>
             </form>
         </div>
-
 
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
-                    <h1>Seja Bem-Vindo <br>Lorem ipsum</h1>
+                    <h1>Seja Bem-Vindo!</h1>
                     <p>Entrar com ID e Senha</p>
                     <button class="hidden" id="login">Entrar</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Olá, programador!</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Cadastre-se agora mesmo</p>
                     <button class="hidden" id="register">Cadastre-se</button>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 
