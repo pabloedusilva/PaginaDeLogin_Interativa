@@ -2,44 +2,33 @@
 <html lang="pt-BR">
 
 <head>
-    <!-- Meta tags para configuração da página -->
     <meta charset="UTF-8">
-    <!-- Codificação de caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Configuração para responsividade -->
-    <!-- Links para arquivos externos -->
     <link rel="stylesheet" href="style.css">
-    <!-- Arquivo CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Ícones -->
     <title>Página de Login</title>
 </head>
 
 <body>
-    <!-- Container principal que envolve todo o conteúdo -->
+    <!-- Container principal -->
     <div class="container" id="container">
         <!-- Formulário de cadastro -->
         <div class="form-container sign-up">
             <form>
                 <h1>Criar conta</h1>
-                <!-- Container para ícones de redes sociais -->
                 <div class="social-icons">
-                    <!-- Links para login social -->
                     <a href="#" class="icons"><i class='bx bxl-google'></i></a>
                     <a href="#" class="icons"><i class='bx bxl-facebook'></i></a>
                     <a href="#" class="icons"><i class='bx bxl-github'></i></a>
                     <a href="#" class="icons"><i class='bx bxl-linkedin'></i></a>
                 </div>
                 <span>Registrar-se</span>
-                <!-- Campos do formulário de cadastro -->
                 <input type="text" placeholder="Nome">
                 <input type="email" placeholder="E-mail">
-                <!-- Campo de senha com ícone de visualização -->
                 <div class="password-field">
                     <input type="password" placeholder="Senha" id="signupPassword">
                     <i class='bx bx-hide eye-icon'></i>
                 </div>
-                <!-- Checkbox para notificações -->
                 <div class="checkbox-container">
                     <label class="custom-checkbox">
                         <input type="checkbox" id="notifications">
@@ -48,7 +37,6 @@
                     </label>
                 </div>
                 <button>Cadastre-se</button>
-                <!-- Link para login em versão mobile -->
                 <a href="#" class="mobile-login">Já possui uma conta? Entrar</a>
             </form>
         </div>
@@ -57,39 +45,32 @@
         <div class="form-container sign-in">
             <form>
                 <h1>Entrar</h1>
-                <!-- Container para ícones de redes sociais -->
                 <div class="social-icons">
-                    <!-- Links para login social -->
                     <a href="#" class="icons"><i class='bx bxl-google'></i></a>
                     <a href="#" class="icons"><i class='bx bxl-facebook'></i></a>
                     <a href="#" class="icons"><i class='bx bxl-github'></i></a>
                     <a href="#" class="icons"><i class='bx bxl-linkedin'></i></a>
                 </div>
                 <span>Login</span>
-                <!-- Campos do formulário de login -->
                 <input type="email" placeholder="Email ou ID">
-                <!-- Campo de senha com ícone de visualização -->
                 <div class="password-field">
                     <input type="password" placeholder="Senha" id="signinPassword">
                     <i class='bx bx-hide eye-icon'></i>
                 </div>
                 <a href="#">Esqueceu a senha?</a>
                 <button>Entrar</button>
-                <!-- Link para cadastro em versão mobile -->
                 <a href="#" class="mobile-signup">Não tem uma conta? Cadastre-se</a>
             </form>
         </div>
 
-        <!-- Container do painel lateral azul (toggle) -->
+        <!-- Container do painel deslizante com imagens -->
         <div class="toggle-container">
             <div class="toggle">
-                <!-- Painel esquerdo do toggle -->
                 <div class="toggle-panel toggle-left">
                     <h1>Seja Bem-Vindo!</h1>
                     <p>Entrar com ID e Senha</p>
                     <button class="hidden" id="login">Entrar</button>
                 </div>
-                <!-- Painel direito do toggle -->
                 <div class="toggle-panel toggle-right">
                     <h1>Olá, programador!</h1>
                     <p>Cadastre-se agora mesmo</p>
@@ -98,7 +79,6 @@
             </div>
         </div>
     </div>
-    <!-- Link para o arquivo JavaScript -->
     <script src="script.js"></script>
 </body>
 
