@@ -883,3 +883,70 @@ input.error {
     transform: scale(1.05);
     /* Aumenta o tamanho ao passar o mouse */
 }
+
+
+/* Adicione estes estilos para o background em mobile */
+@media (max-width: 768px) {
+    body {
+        position: relative;
+        background-color: transparent;
+    }
+
+    /* Overlay escuro comum para ambas as imagens */
+    body::before,
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        z-index: -2;
+    }
+
+    /* Primeira imagem com overlay */
+    body::before {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url('https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3539905:1722265296/GTqcdSwXUAAPB7Z.jpeg?f=16x9&$p$f=f1c0556');
+        object-fit: cover;
+    }
+
+    /* Segunda imagem com overlay */
+    body::after {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url('https://media.istockphoto.com/id/1209988354/pt/foto/young-man-skateboarding-in-los-angeles.jpg?s=612x612&w=0&k=20&c=CJdN7rFhY4ueYJgEtjFf9_P8GO0ZHq8k_egqDJOzMq4=');
+        object-fit: cover;
+    }
+
+    /* Estados ativos das imagens */
+    body.bg-1::before {
+        opacity: 1;
+    }
+
+    body.bg-2::after {
+        opacity: 1;
+    }
+
+    /* Ajuste do container para maior transparência */
+    .container {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Esconde o toggle container em mobile */
+    .toggle-container {
+        display: none;
+    }
+}
