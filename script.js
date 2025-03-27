@@ -104,6 +104,55 @@ mobileLoginLink.addEventListener('click', (e) => {
     updateLayout(); // Atualiza layout
 });
 
+// Atualização da função initMobileBackground
+function initMobileBackground() {
+    let isFirstBg = true;
+    const body = document.body;
+
+    function toggleBackground() {
+        if (isMobile()) {
+            if (isFirstBg) {
+                body.classList.remove('bg-2');
+                body.classList.add('bg-1');
+            } else {
+                body.classList.remove('bg-1');
+                body.classList.add('bg-2');
+            }
+            isFirstBg = !isFirstBg;
+        }
+    }
+
+        let bgInterval;
+
+    function startBgAnimation() {
+        if (isMobile()) {
+            body.classList.add('bg-1');
+// Atualizado para 10 segundos (10000ms)
+            bgInterval = setInterval(toggleBackground, 10000);
+        }
+    }
+
+    function stopBgAnimation() {
+        clearInterval(bgInterval);
+        body.classList.remove('bg-1', 'bg-2');
+    }
+
+        window.addEventListener('resize', () => {
+        if (isMobile()) {
+            startBgAnimation();
+        } else {
+            stopBgAnimation();
+        }
+    });
+
+        if (isMobile()) {
+        startBgAnimation();
+    }
+}
+
 // Eventos de janela
 window.addEventListener('resize', updateLayout); // Atualiza layout ao redimensionar
-window.addEventListener('load', updateLayout); // Atualiza layout ao carregar
+window.addEventListener('load', () => {
+updateLayout();
+    initMobileBackground();
+}); // Atualiza layout ao carregar
