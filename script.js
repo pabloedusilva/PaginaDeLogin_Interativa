@@ -122,22 +122,21 @@ function initMobileBackground() {
         }
     }
 
-        let bgInterval;
+    let bgInterval;
 
     function startBgAnimation() {
         if (isMobile()) {
-            body.classList.add('bg-1');
-// Atualizado para 10 segundos (10000ms)
-            bgInterval = setInterval(toggleBackground, 10000);
+            body.classList.add('bg-1'); // Inicia com a primeira imagem
+            bgInterval = setInterval(toggleBackground, 5000); // Altera a cada 5 segundos
         }
     }
 
     function stopBgAnimation() {
         clearInterval(bgInterval);
-        body.classList.remove('bg-1', 'bg-2');
+        body.classList.remove('bg-1', 'bg-2'); // Remove as classes ao sair do mobile
     }
 
-        window.addEventListener('resize', () => {
+    window.addEventListener('resize', () => {
         if (isMobile()) {
             startBgAnimation();
         } else {
@@ -145,7 +144,7 @@ function initMobileBackground() {
         }
     });
 
-        if (isMobile()) {
+    if (isMobile()) {
         startBgAnimation();
     }
 }
@@ -153,6 +152,6 @@ function initMobileBackground() {
 // Eventos de janela
 window.addEventListener('resize', updateLayout); // Atualiza layout ao redimensionar
 window.addEventListener('load', () => {
-updateLayout();
+    updateLayout();
     initMobileBackground();
 }); // Atualiza layout ao carregar
