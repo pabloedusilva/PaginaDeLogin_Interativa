@@ -26,7 +26,7 @@ function togglePassword(inputId, iconElement) {
 
 // Adiciona evento de clique em todos os ícones de olho
 document.querySelectorAll('.eye-icon').forEach(icon => {
-    icon.addEventListener('click', function() {
+    icon.addEventListener('click', function () {
         const inputId = this.previousElementSibling.id;
         togglePassword(inputId, this);
     });
