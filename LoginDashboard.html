@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Página de Login</title>
+</head>
+
+<body>
+    <!-- Container principal -->
+    <div class="container" id="container">
+        <!-- Formulário de login -->
+        <div class="form-container sign-in">
+            <form>
+                <h1>Entrar</h1>
+                <div class="social-icons">
+                    <a href="#" class="icons"><i class='bx bxl-google'></i></a>
+                    <a href="#" class="icons"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="icons"><i class='bx bxl-github'></i></a>
+                    <a href="#" class="icons"><i class='bx bxl-linkedin'></i></a>
+                </div>
+                <span>Login</span>
+                <input type="email" placeholder="Email ou ID">
+                <div class="password-field">
+                    <input type="password" placeholder="Senha" id="signinPassword">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+                <a href="#">Esqueceu a senha?</a>
+                <button>Entrar</button>
+            </form>
+        </div>
+
+        <!-- Container do painel deslizante com imagens -->
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Olá, Administrador!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
