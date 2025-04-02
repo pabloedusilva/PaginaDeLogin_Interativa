@@ -1,3 +1,20 @@
+<?php
+if (isset($_POST['submit'])) {
+    include_once('config.php');
+
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha) VALUES ('$nome', '$email', '$senha')");
+
+    if ($result) {
+        echo "Cadastro realizado com sucesso!";
+    } else {
+        echo "Erro ao cadastrar: " . mysqli_error($conexao);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -14,7 +31,7 @@
     <div class="container" id="container">
         <!-- Formulário de cadastro -->
         <div class="form-container sign-up">
-            <form>
+            <form method="POST" action="">
                 <h1>Criar conta</h1>
                 <div class="social-icons">
                     <a href="#" class="icons"><i class='bx bxl-google'></i></a>
@@ -23,20 +40,13 @@
                     <a href="#" class="icons"><i class='bx bxl-linkedin'></i></a>
                 </div>
                 <span>Registrar-se</span>
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="E-mail">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="E-mail" required>
                 <div class="password-field">
-                    <input type="password" placeholder="Senha" id="signupPassword">
+                    <input type="password" name="senha" placeholder="Senha" id="signupPassword" required>
                     <i class='bx bx-hide eye-icon'></i>
                 </div>
-                <div class="checkbox-container">
-                    <label class="custom-checkbox">
-                        <input type="checkbox" id="notifications">
-                        <span class="checkmark"></span>
-                        <span class="checkbox-text">Aceito receber notificações e promoções</span>
-                    </label>
-                </div>
-                <button>Cadastre-se</button>
+                <button type="submit" name="submit">Cadastre-se</button>
                 <a href="#" class="mobile-login">Já possui uma conta? Entrar</a>
             </form>
         </div>
